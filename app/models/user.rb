@@ -9,10 +9,8 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_by_omniauth(auth)
   	user = User.where(provider: auth[:provider], uid: auth[:uid]).first
-    puts user
-    puts "self.find_or_create_by_omniauth in user.rb"
+    return user if user
   	unless user
-      puts "AQUI NO VA A ENTRAR COMPARE"
   		user = User.create(
   				name: auth[:name],
   				last_name: auth[:lastname],

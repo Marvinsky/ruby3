@@ -12,7 +12,6 @@ class OmniauthCallbacksController < ApplicationController
 		}
 		@user = User.find_or_create_by_omniauth(data)
 		puts @user
-		puts "after printttttt"
 		if @user.persisted?
 			sign_in_and_redirect @user, event: :authentication
 		else
