@@ -17,6 +17,9 @@ Devise.setup do |config|
 
   config.omniauth :facebook, "1655862588002546", "5563b2cecdf15bcf6c6721575a308429"
 
+  config.omniauth :twitter, "fGYCK2lodamqdyWKD6mfcx1Cq", "Tb4VbCtDj7UzTCJUeXk0dHpKZYAjquyklc3dCyUdCDTrXi3FG7"
+
+
   #silence_warnings do
     # Where to find certificate OMNIAUTH
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?

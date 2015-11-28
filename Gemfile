@@ -33,6 +33,8 @@ gem "font-awesome-rails"
 gem "omniauth"
 #facebook middleware installation
 gem "omniauth-facebook"
+#twitter middleware installation
+gem "omniauth-twitter"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
