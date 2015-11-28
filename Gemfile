@@ -29,6 +29,11 @@ gem "devise"
 
 gem "font-awesome-rails"
 
+# Install Omniauth
+gem "omniauth"
+#facebook middleware installation
+gem "omniauth-facebook"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
