@@ -6,6 +6,12 @@ one:
   extension: MyString
   user_id: 
 
+first_post:
+  title: title1 as a fixtture
+  content: content1 as a fixture
+  extension: jpeg
+  user_id:
+
 two:
   title: MyString
   content: MyText
