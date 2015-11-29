@@ -26,10 +26,15 @@ class OmniauthCallbacksController < ApplicationController
 	def twitter
 		auth = request.env["omniauth.auth"]
 		#raise auth.to_yaml
+		info = auth['info']
+		#puts info.name
+		#puts info.nickname
+		#puts auth.provider
+		#puts auth.uid
 		data = {
-			name: auth.info.name,
+			name: info.name,
 			lastname: "",
-			username: auth.info.nickname,
+			username: info.nickname,
 			email: "",
 			provider: auth.provider,
 			uid: auth.uid
