@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks",
                                   registrations: "registrations"}
   # For each request that returns omniauth, the controller omniauth_callbacks must handle it
