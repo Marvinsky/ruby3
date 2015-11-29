@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, omniauth_providers: [:facebook, :twitter]
 
+  # sayint to device that is not required that email exists into the app
+  def email_required?
+    false
+  end
+
   validates :username, presence: true, uniqueness: true, 
             length: {minimum: 5, maximum:20, too_short: "at leat 5 characteres", too_long: "Twitter does not accept more than 20 characteres."},
             format: {with: /([A-Za-z0-9\-\_]+)/, message: " must only contain letters and numbers"}
