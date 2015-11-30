@@ -36,6 +36,10 @@ gem "omniauth-facebook"
 #twitter middleware installation
 gem "omniauth-twitter"
 
+# publicActivity works with feed
+gem "public_activity"
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
