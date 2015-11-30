@@ -3,6 +3,8 @@ require 'test_helper'
 class PostsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   setup do
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    sign_in users(:one)
     @post = posts(:one)
   end
 

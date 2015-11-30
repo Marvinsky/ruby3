@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class AttachmentsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @attachment = attachments(:one)
   end
