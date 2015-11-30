@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :friendships
   #follow_id <- convention  => user_id
-  has_many :follows, through: :friendships, source: :user 
+  has_many :follows, through: :friendships, source: :friend
   #follower_id <- convention
-  has_many :followers_friendships, class_name: "Friendship", foreign_key: "user_id"
-  has_many :followers, through: :followers_friendships, source: :friend
+  has_many :followers_friendships, class_name: "Friendship", foreign_key: "friend_id"
+  has_many :followers, through: :followers_friendships, source: :user
 
   def follow!(amigo_id)
     friendships.create!(friend_id: amigo_id)
