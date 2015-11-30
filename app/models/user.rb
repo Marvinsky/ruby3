@@ -3,6 +3,21 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
   has_many :posts
+  has_many :friendships
+  #follow_id <- convention  => user_id
+  has_many :follows, through: :friendships, source: :user 
+  #follower_id <- convention
+  has_many :followers_friendships, class_name: "Friendship", foreign_key: "user_id"
+  has_many :followers, through: :followers_friendships, source: :friend
+
+  def follow!(amigo_id)
+    friendships.create!(friend_id: amigo_id)
+  end
+
+  def can_follow?(amigo_id)
+    not amigo_id == self.id or friendships.where(friend_id: amigo_id).size() > 0
+  end
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

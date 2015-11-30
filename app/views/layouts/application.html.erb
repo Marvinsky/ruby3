@@ -16,7 +16,7 @@
 	<header>
 		<nav>
 			<ul class="nav nav-tabs">
-				<li>
+				<li> 
 					<%= link_to "Inicio", root_path %>
 				</li>
 				<li>
@@ -24,7 +24,10 @@
 				</li>
 				<% if user_signed_in? %>
 					<li>
-						<%= link_to 'Edit Profile', edit_user_registration_path(current_user) %>
+						<%= link_to "Profile", current_user %>
+					</li>
+					<li>
+						<%= link_to 'Edit User', edit_user_registration_path(current_user) %>
 					</li>
 					<li>
 						<%= link_to 'Close session', destroy_user_session_path, method: :delete %>
