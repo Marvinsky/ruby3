@@ -3,12 +3,18 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
   has_many :posts
-  has_many :friendships
+  has_many :friendships, class_name: "Friendship",
+                        foreign_key: "user_id",
+                        dependent: :destroy
   #follow_id <- convention  => user_id
-  has_many :follows, through: :friendships, source: :friend
+  has_many :follows, through: :friendships, source: :user
+  
   #follower_id <- convention
-  has_many :followers_friendships, class_name: "Friendship", foreign_key: "friend_id"
-  has_many :followers, through: :followers_friendships, source: :user
+  has_many :followers_friendships, class_name: "Friendship", 
+                                  foreign_key: "friend_id",
+                                  dependent: :destroy
+  
+  has_many :followers, through: :followers_friendships, source: :friend
 
   def follow!(amigo_id)
     friendships.create!(friend_id: amigo_id)

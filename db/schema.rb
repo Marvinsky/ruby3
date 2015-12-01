@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20151130193548) do
     t.string   "key"
     t.text     "parameters"
     t.integer  "recipient_id"
-    t.string   "recipient_type"
+    t.string   "recipient_typeact"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
