@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :attachments
+  resources :payments
+  get "/shoppingcar", to: "payments#shoppingcar" 
   resources :posts
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks",
                                   registrations: "registrations"}

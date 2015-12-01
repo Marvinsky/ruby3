@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user, dependent: :destroy
   has_many :attachments
+  has_many :payments
   validates :title, presence: true, uniqueness: true
   before_save :default_values
 

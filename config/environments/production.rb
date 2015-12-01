@@ -76,4 +76,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+    config.after_initialize do
+    options_paypal = {
+      login: "nivramsky-facilitator_api1.gmail.com",
+      password: "ZNCPPHH548ZSE4XZ",
+      signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31AhyfY.YF3QkgsuOvVPQYMO-UrwX1"
+    }
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(options_paypal)
 end

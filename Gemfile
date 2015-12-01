@@ -39,6 +39,8 @@ gem "omniauth-twitter"
 # publicActivity works with feed
 gem "public_activity"
 
+#ActiveMerchant para manejar pagos
+gem "activemerchant"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
   has_many :posts
+  has_many :payments
   has_many :friendships, class_name: "Friendship",
                         foreign_key: "user_id",
                         dependent: :destroy
